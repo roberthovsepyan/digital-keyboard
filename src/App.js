@@ -22,6 +22,7 @@ import keyE2 from './sounds/E2.mp3';
 import keyF2 from './sounds/F2.mp3';
 
 import {WhiteKey} from './WhiteKey';
+import {BlackKey} from './BlackKey';
 
 const Wrapper = styled.div`
     outline: none;
@@ -32,7 +33,7 @@ const Wrapper = styled.div`
 
 const KeyboardWrapper = styled.div`
     position: absolute;
-    left: 30%;
+    left: 40%;
     top: 30%;
     border: 5px solid #4A148C;
     border-radius: 5px;
@@ -256,20 +257,27 @@ class App extends Component {
     };
 
     render() {
-        console.log(this.state.keys);
         return (
             <Wrapper tabIndex={0} ref='keyboard' onKeyDown={this.handleKeyDown} onKeyUp={this.handleKeyUp}>
                 <KeyboardWrapper>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
-                    <WhiteKey/>
+                    <WhiteKey active={this.state.keys.A} text='A'/>
+                    <WhiteKey active={this.state.keys.S} text='S'/>
+                    <WhiteKey active={this.state.keys.D} text='D'/>
+                    <WhiteKey active={this.state.keys.F} text='F'/>
+                    <WhiteKey active={this.state.keys.G} text='G'/>
+                    <WhiteKey active={this.state.keys.H} text='H'/>
+                    <WhiteKey active={this.state.keys.J} text='J'/>
+                    <WhiteKey active={this.state.keys.K} text='K'/>
+                    <WhiteKey active={this.state.keys.L} text='L'/>
+                    <WhiteKey active={this.state.keys[';']} text=';'/>
+                    <WhiteKey active={this.state.keys["'"]} text="'"/>
+                    <BlackKey active={this.state.keys.W} text='W' left='24px'/>
+                    <BlackKey active={this.state.keys.E} text='E' left='60px'/>
+                    <BlackKey active={this.state.keys.T} text='T' left='132px'/>
+                    <BlackKey active={this.state.keys.Y} text='Y' left='168px'/>
+                    <BlackKey active={this.state.keys.U} text='U' left='204px'/>
+                    <BlackKey active={this.state.keys.O} text='O' left='276px'/>
+                    <BlackKey active={this.state.keys.P} text='P' left='312px'/>
                 </KeyboardWrapper>
             </Wrapper>
         );

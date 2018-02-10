@@ -2,17 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-export const WhiteKey = (props) => {
+export const BlackKey = (props) => {
     const Wrapper = styled.div`
         display: inline-flex;
-        align-items: flex-end;
+        align-items: flex-end;        
         justify-content: center;
         padding-bottom: 5px;
-        position: relative;
-        height: 160px;
-        width: 35px;
+        position: absolute;
+        border-radius: 0px 0px 4px 4px;
+        top: 0px;
+        left: ${props.left};
+        height: 100px;
+        width: 22px;
         border-right: 1px solid black;
-        background: ${props.active ? '#CE93D8' :'white'};
+        background: ${props.active ? '#AA00FF' :'black'};
+        color: white;
     `;
     return (
         <Wrapper>
